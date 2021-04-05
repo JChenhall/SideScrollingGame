@@ -1,0 +1,277 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --pixel-size: 3;
+}
+
+body {
+  background-color: rgba(14, 14, 49, 0.733);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.guy1.jumping {
+  width: 111px;
+  height: 150px;
+  overflow: hidden;
+  z-index: 11;
+  position: relative;
+  top: 220px;
+}
+
+.guy1__spritesheet {
+  background-image: url(../images/advenRun.png);
+  background-repeat: no-repeat;
+  background-size: 666px, 150px;
+  height: 100px;
+  width: calc(222px * var(--pixel-size));
+  z-index: 12;
+  animation: moveSpritesheet 1s steps(6) infinite;
+}
+
+.guy1.jumping.leap {
+  width: 100px;
+  height: 150px;
+  overflow: hidden;
+  z-index: 11;
+  position: relative;
+  top: 220px;
+}
+
+.guy1__spritesheet.jumping.leap {
+  background-image: url(../images/jumpingadvenDONE.png);
+  background-repeat: no-repeat;
+  background-size: 1100px, 150px;
+  height: 100px;
+  width: 1100px;
+  z-index: 12;
+  animation: moveSpritesheet 1.5s steps(10) infinite;
+}
+
+.jump {
+  animation: jump 1s steps(10) infinite;
+}
+
+.dead {
+  width: 100px;
+  height: 150px;
+  overflow: hidden;
+  z-index: 11;
+  position: relative;
+  top: 220px;
+}
+
+.dead__spritesheet {
+  background-image: url(../images/advDead.png);
+  background-repeat: no-repeat;
+  background-size: 666px, 150px;
+  height: 100px;
+  width: calc(222px * var(--pixel-size));
+  z-index: 12;
+  animation: moveSpritesheet 1s steps(6);
+}
+
+.enemy {
+  width: 37px;
+  height: 150px;
+  position: relative;
+  top: 90px;
+  left: 600px;
+  z-index: 12;
+  overflow: hidden;
+  animation: danger 3s infinite linear;
+}
+
+.enemy__spritesheet {
+  height: 60px;
+  width: 666px;
+  z-index: 12;
+  animation: moveEnemySpritesheet 3s steps(17) infinite;
+}
+
+.pixelart {
+  image-rendering: pixelated;
+}
+
+@keyframes moveSpritesheet {
+  from {
+    transform: translate3d(0px, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@keyframes moveEnemySpritesheet {
+  from {
+    transform: translate3d(0px, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@keyframes danger {
+  0% {
+    left: 620px;
+  }
+  100% {
+    left: -40px;
+  }
+}
+@keyframes jump {
+  0% {
+    top: 220px;
+  }
+  30% {
+    top: 150px;
+  }
+  30% {
+    top: 150px;
+  }
+  100% {
+    top: 220px;
+  }
+}
+.scoreGame {
+  position: relative;
+  font-family: "VT323", monospace;
+  font-size: 30px;
+  color: #d69a19;
+  left: 80%;
+  overflow: hidden;
+}
+
+.gameScore {
+  position: relative;
+  font-family: "VT323", monospace;
+  font-size: 30px;
+  color: #d69a19;
+  left: 80%;
+  overflow: hidden;
+}
+
+p {
+  position: relative;
+  font-family: "VT323", monospace;
+  font-size: 30px;
+  color: #d69a19;
+  left: 30%;
+}
+
+.deathNote {
+  visibility: hidden;
+  position: relative;
+  text-align: center;
+  z-index: 20;
+  background-color: brown;
+  font-size: 3em;
+  font-family: "VT323", monospace;
+  color: #d69a19;
+  padding: 1%;
+}
+.deathNote .refresh {
+  font-family: "VT323", monospace;
+  color: #d69a19;
+  font-size: 1em;
+  background-color: #691c1c;
+  border-radius: 15px;
+}
+.deathNote .mainMenu {
+  font-family: "VT323", monospace;
+  color: #d69a19;
+  font-size: 1em;
+  background-color: #691c1c;
+  border-radius: 15px;
+}
+
+#startGame {
+  z-index: 15;
+}
+
+.game__window {
+  padding-top: 200px;
+}
+.game__window #game {
+  position: relative;
+  border: 5px solid black;
+  background-color: #010127;
+  height: 355px;
+  width: 640px;
+  background-image: url(../images/background/cloudySky_640x360px.png);
+  background-repeat: repeat-x;
+  overflow: hidden;
+}
+.game__window .background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url("../images/background/par3_tileable_640x360px.png") 0 0, url("../images/background/par2_tileable_640x360px.png") 40% 0, url("../images/background/par1_tileable_640x360px.png") 80% 0;
+  background-repeat: repeat-x;
+  -webkit-animation: moving-images 600s ease infinite;
+  -moz-animation: moving-images 600s ease infinite;
+  -o-animation: moving-images 600s ease infinite;
+  animation: moving-images 600s ease infinite;
+}
+.game__window .floor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url("../images/longFloorSmall.png") 0 0;
+  background-repeat: repeat-x;
+  -webkit-animation: moving-images 600s ease infinite;
+  -moz-animation: moving-images 600s ease infinite;
+  -o-animation: moving-images 600s ease infinite;
+  animation: moving-images 600s ease infinite;
+}
+@keyframes moving-images {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: -9999px;
+  }
+  100% {
+    left: 0;
+  }
+}
+@-moz-keyframes moving-images {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: -9999px;
+  }
+  100% {
+    left: 0;
+  }
+}
+@-webkit-keyframes moving-images {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: -9999px;
+  }
+  100% {
+    left: 0;
+  }
+}
+@-o-keyframes moving-images {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: -9999px;
+  }
+  100% {
+    left: 0;
+  }
+}

@@ -1,0 +1,183 @@
+@import "_variability.scss";
+@import "_typography.scss";
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --pixel-size: 3;
+}
+
+body{
+  background-color: rgba(14, 14, 49, 0.733);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.guy1.jumping {
+  width:111px;
+  height: 150px;
+  overflow: hidden;
+  z-index: 11;
+  position: relative;
+  top: 220px;
+}
+.guy1__spritesheet {
+  background-image: url(../images/advenRun.png);
+  background-repeat: no-repeat;
+  background-size: 666px ,150px;
+  height: 50*2px;
+  width: calc(222px * var(--pixel-size));
+  z-index: 12;
+  animation: moveSpritesheet 1s steps(6) infinite;
+}
+
+.guy1.jumping.leap {
+  width:100px;
+  height: 150px;
+  overflow: hidden;
+  z-index: 11;
+  position: relative;
+  top: 220px;
+}
+.guy1__spritesheet.jumping.leap {
+  background-image: url(../images/jumpingadvenDONE.png);
+  background-repeat: no-repeat;
+  background-size: 1100px ,150px;
+  height: 50*2px;
+  width: 1100px;
+  z-index: 12;
+  animation: moveSpritesheet 1.5s steps(10)infinite;
+}
+.jump{
+animation: jump 1s steps(10)infinite;
+}
+
+.dead {
+  width:100px;
+  height: 150px;
+  overflow: hidden;
+  z-index: 11;
+  position: relative;
+  top: 220px;
+}
+.dead__spritesheet{
+  background-image: url(../images/advDead.png);
+  background-repeat: no-repeat;
+  background-size: 666px ,150px;
+  height: 50*2px;
+  width: calc(222px * var(--pixel-size));
+  z-index: 12;
+  animation: moveSpritesheet 1s steps(6);
+}
+
+
+.enemy {
+  width: 37px;
+  height: 150px;
+  position: relative;
+  top: 90px;
+  left: 600px;
+  z-index: 12;
+  overflow: hidden;
+ animation: danger 3s infinite linear;
+}
+.enemy__spritesheet{
+  height: 60px;
+  width: 666px;
+  z-index: 12;
+  animation: moveEnemySpritesheet 3s steps(17) infinite;
+}
+.pixelart {
+  image-rendering: pixelated;
+}
+
+@keyframes moveSpritesheet {
+  from {
+    transform: translate3d(0px,0,0)
+  }
+  to {
+transform: translate3d(-100%,0,0);
+  }
+}
+
+@keyframes moveEnemySpritesheet {
+  from {
+    transform: translate3d(0px,0,0)
+  }
+  to {
+transform: translate3d(-100%,0,0);
+  }
+}
+
+@keyframes danger {
+  0%{left: 620px;}
+  100%{ left: -40px;}
+}
+
+@keyframes jump {
+  0% {top:220px;}
+  30%{top:150px;}
+  30%{top:150px;}
+  100%{top:220px;} 
+}
+
+.scoreGame {
+  position: relative;
+  font-family: 'VT323', monospace;
+  font-size: 30px;
+  color: rgb(214, 154, 25);
+  left: 80%;
+  overflow: hidden;
+}
+.gameScore {
+  position: relative;
+  font-family: 'VT323', monospace;
+  font-size: 30px;
+  color: rgb(214, 154, 25);
+  left: 80%;
+  overflow: hidden;
+}
+
+p {
+  position: relative;
+  font-family: 'VT323', monospace;
+  font-size: 30px;
+  color: rgb(214, 154, 25);
+  left: 30%;
+}
+
+.deathNote {
+  visibility:hidden;
+  position: relative;
+  text-align: center;
+  z-index: 20;
+  background-color: brown;
+  font-size: 3em;
+  font-family: 'VT323', monospace;
+  color: rgb(214, 154, 25);
+  padding:1%;
+
+  .refresh{
+    font-family: 'VT323', monospace;
+    color: rgb(214, 154, 25);
+    font-size: 1em;
+    background-color: rgb(105, 28, 28);
+    border-radius: 15px;
+  }
+  .mainMenu {
+    font-family: 'VT323', monospace;
+    color: rgb(214, 154, 25);
+    font-size: 1em;
+    background-color: rgb(105, 28, 28);
+    border-radius: 15px;
+  }
+}
+
+

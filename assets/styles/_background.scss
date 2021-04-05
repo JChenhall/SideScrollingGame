@@ -1,0 +1,70 @@
+//background elements
+
+
+ .game__window {
+ padding-top: 200px;
+
+#game {
+  position:relative;
+  border: 5px solid black;
+  background-color: rgb(1, 1, 39);
+  height: 355px;
+  width: 640px;
+  background-image: url(../images/background/cloudySky_640x360px.png);
+  background-repeat: repeat-x;
+  overflow: hidden;
+}
+
+
+.background {
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background:url('../images/background/par3_tileable_640x360px.png') 0 0, url('../images/background/par2_tileable_640x360px.png') 40% 0, url('../images/background/par1_tileable_640x360px.png') 80% 0;
+  background-repeat: repeat-x;
+  -webkit-animation: moving-images 600s ease infinite;
+     -moz-animation: moving-images 600s ease infinite;
+       -o-animation: moving-images 600s ease infinite;
+          animation: moving-images 600s ease infinite;
+}
+
+
+.floor {
+  position:absolute;
+  top: 0;
+  bottom:0;
+  left:0;
+  right:0;
+  background: url('../images/longFloorSmall.png') 0 0; 
+  background-repeat: repeat-x;
+  -webkit-animation: moving-images 600s ease infinite;
+     -moz-animation: moving-images 600s ease infinite;
+       -o-animation: moving-images 600s ease infinite;
+          animation: moving-images 600s ease infinite;
+}
+
+
+@keyframes moving-images {
+  0%   {left:0;}
+  50%  {left:-9999px;}
+  100% {left:0;}
+}
+@-moz-keyframes moving-images {
+  0%   {left:0;}
+  50%  {left:-9999px;}
+  100% {left:0;}
+}
+@-webkit-keyframes moving-images {
+  0%   {left:0;}
+  50%  {left:-9999px;}
+  100% {left:0;}
+}
+@-o-keyframes moving-images {
+  0%   {left:0;}
+  50%  {left:-9999px;}
+  100% {left:0;}
+}
+
+ }

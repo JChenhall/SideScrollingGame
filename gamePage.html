@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jack's Game</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <script src="./assets/scripts.js" type="module" async defer></script>
+</head>
+<body>
+    <section class="game__window">
+        <div class="gameScore">GAME SCORE</div>
+        <div id="scoreGame" class="scoreGame">0</div>
+    <div id="game">
+        <div class="background"> </div>
+        <div id="guy1" class="guy1 jumping">
+            <div class="guy1__spritesheet pixelart jumping"></div>
+        </div>
+        <div class="enemy">
+            <img class = "enemy__spritesheet" src="./assets/images/skeleton.png" alt="Skeleton">
+        </div>
+        <div class="floor"></div>
+        <div class="deathNote">
+            <h1>Oh No!! YOU DIED!!!</h1>
+            <button class="refresh" onClick="window.location.reload();">Click to retry</button>
+            <button class="mainMenu" onclick="document.location='index.html'">Main menu</button>
+        </div>
+    </div>
+    <p>PRESS SPACEBAR TO JUMP</p>	
+   
+</section>
+</body>
+</html>  
